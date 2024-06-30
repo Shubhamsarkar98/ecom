@@ -1,11 +1,11 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: 0,
+  products: [],
 };
 
 export const counterSlice = createSlice({
-  name: 'users',
+  name: 'products',
   initialState,
   reducers: {
     increment: (state) => {
@@ -15,5 +15,5 @@ export const counterSlice = createSlice({
 });
 
 export const { increment } = counterSlice.actions;
-export const selectUser=(state)=>state.users.value
+export const selectUser=(state)=>state.products.products
 export default counterSlice.reducer;
