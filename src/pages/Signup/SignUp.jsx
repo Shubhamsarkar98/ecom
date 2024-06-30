@@ -1,8 +1,8 @@
 import React from 'react'
 
 const SignUp = () => {
-  return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    return (
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img
                     className="mx-auto h-10 w-auto"
@@ -10,7 +10,7 @@ const SignUp = () => {
                     alt="Your Company"
                 />
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                   Create New Account
+                    Create New Account
                 </h2>
             </div>
 
@@ -54,11 +54,11 @@ const SignUp = () => {
                             />
                         </div>
                     </div>
-                   
+
                     <div>
                         <div className="flex items-center justify-between">
                             <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                            Confirm   Password
+                                Confirm   Password
                             </label>
                         </div>
                         <div className="mt-2">
@@ -82,14 +82,14 @@ const SignUp = () => {
                 </form>
 
                 <p className="mt-10 text-center text-sm text-gray-500">
-                   Already A member?{' '}
+                    Already A member?{' '}
                     <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                       Login 
+                        Login
                     </a>
                 </p>
             </div>
         </div>
-  )
+    )
 }
 
 export default SignUp
