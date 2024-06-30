@@ -1,6 +1,7 @@
 import React, { Children } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const user = {
   name: 'Tom Cook',
@@ -58,14 +59,16 @@ const Navbar = ({ children }) => {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-center md:ml-6">
-                    <button
-                      type="button"
-                      className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    >
-                      <span className="absolute -inset-1.5" />
-                      <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                    <Link to="/cart">
+                      <button
+                        type="button"
+                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <span className="absolute -inset-1.5" />
+                        <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
 
-                    </button>
+                      </button>
+                    </Link>
                     <span className="inline-flex items-center rounded-md bg-red-50 px-2 mb-7 -ml-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
                       5
                     </span>
@@ -142,6 +145,7 @@ const Navbar = ({ children }) => {
                     <div className="text-base font-medium leading-none text-white">{user.name}</div>
                     <div className="text-sm font-medium leading-none text-gray-400">{user.email}</div>
                   </div>
+                  <Link to='/cart'>
                   <button
                     type="button"
                     className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -150,8 +154,9 @@ const Navbar = ({ children }) => {
                     <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
 
                   </button>
+                 </Link>
                   <span className="inline-flex items-center rounded-md bg-red-50 mb-3 px-2 py-1 mb-5 -ml-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
-                   3
+                    3
                   </span>
                 </div>
                 <div className="mt-3 space-y-1 px-2">
