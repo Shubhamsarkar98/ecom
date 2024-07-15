@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import {
     Dialog,
     DialogBackdrop,
@@ -14,7 +15,9 @@ import {
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
-
+import { getProduct } from '../redux/productSlice'
+import { useSelector } from 'react-redux'
+import { selectProducts } from '../redux/productSlice'
 const items = [
     { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
     { id: 2, title: 'Front End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
@@ -72,44 +75,51 @@ function classNames(...classes) {
 
 const ProductList = () => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-    const products = [
-        {
-            id: 1,
-            name: 'Basic Tee',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: '$35',
-            color: 'Black',
-        },
-        {
-            id: 2,
-            name: 'Basic Tee',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: '$35',
-            color: 'Black',
-        },
-        {
-            id: 3,
-            name: 'Basic Tee',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: '$35',
-            color: 'Black',
-        },
-        {
-            id: 4,
-            name: 'Basic Tee',
-            href: '#',
-            imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-            imageAlt: "Front of men's Basic Tee in black.",
-            price: '$35',
-            color: 'Black',
-        },
-    ]
+    const products=useSelector(selectProducts)
+    console.log(products)
+    const dispatch=useDispatch()
+    useEffect(() => {
+        dispatch(getProduct())
+       }, [])
+       
+    // const products = [
+    //     {
+    //         id: 1,
+    //         name: 'Basic Tee',
+    //         href: '#',
+    //         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    //         imageAlt: "Front of men's Basic Tee in black.",
+    //         price: '$35',
+    //         color: 'Black',
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Basic Tee',
+    //         href: '#',
+    //         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    //         imageAlt: "Front of men's Basic Tee in black.",
+    //         price: '$35',
+    //         color: 'Black',
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'Basic Tee',
+    //         href: '#',
+    //         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    //         imageAlt: "Front of men's Basic Tee in black.",
+    //         price: '$35',
+    //         color: 'Black',
+    //     },
+    //     {
+    //         id: 4,
+    //         name: 'Basic Tee',
+    //         href: '#',
+    //         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    //         imageAlt: "Front of men's Basic Tee in black.",
+    //         price: '$35',
+    //         color: 'Black',
+    //     },
+    // ]
     return (
         <>
 
@@ -149,7 +159,7 @@ const ProductList = () => {
                                                 <>
                                                     <h3 className="-mx-2 -my-3 flow-root">
                                                         <DisclosureButton className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                                            <span className="font-medium text-gray-900">{section.name}</span>
+                                                            <span className="font-medium text-gray-900">{section.title}</span>
                                                             <span className="ml-6 flex items-center">
                                                                 {open ? (
                                                                     <MinusIcon className="h-5 w-5" aria-hidden="true" />
@@ -304,7 +314,7 @@ const ProductList = () => {
                                                 <div key={product.id} className="group relative">
                                                     <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                                         <img
-                                                            src={product.imageSrc}
+                                                            src={product.images[0]}
                                                             alt={product.imageAlt}
                                                             className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                                         />
