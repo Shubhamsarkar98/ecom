@@ -76,7 +76,6 @@ function classNames(...classes) {
 const ProductList = () => {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
     const products=useSelector(selectProducts)
-    console.log(products)
     const dispatch=useDispatch()
     useEffect(() => {
         dispatch(getProduct())
@@ -124,7 +123,7 @@ const ProductList = () => {
         <>
 
 
-            {/* <div className="bg-white">
+             <div className="bg-white">
                 <div>
                     
                     <Dialog className="relative z-40 lg:hidden" open={mobileFiltersOpen} onClose={setMobileFiltersOpen}>
@@ -403,7 +402,7 @@ const ProductList = () => {
                         </div>
                     </main>
                 </div>
-            </div> */}
+            </div> 
 
 
 
