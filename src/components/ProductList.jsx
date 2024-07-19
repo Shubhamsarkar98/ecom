@@ -124,9 +124,9 @@ const ProductList = () => {
         <>
 
 
-            <div className="bg-white">
+            {/* <div className="bg-white">
                 <div>
-                    {/* Mobile filter dialog */}
+                    
                     <Dialog className="relative z-40 lg:hidden" open={mobileFiltersOpen} onClose={setMobileFiltersOpen}>
                         <DialogBackdrop
                             transition
@@ -150,7 +150,7 @@ const ProductList = () => {
                                     </button>
                                 </div>
 
-                                {/* Filters */}
+                               
                                 <form className="mt-4 border-t border-gray-200">
 
                                     {filters.map((section) => (
@@ -260,7 +260,7 @@ const ProductList = () => {
 
 
                             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                                {/* Filters */}
+                             
                                 <form className="hidden lg:block">
                                     {filters.map((section) => (
                                         <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
@@ -306,7 +306,7 @@ const ProductList = () => {
                                     ))}
                                 </form>
 
-                                {/* Product grid */}
+                                
                                 <div className="lg:col-span-3"><div className="bg-white">
                                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
                                         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
@@ -327,7 +327,7 @@ const ProductList = () => {
                                                                     {product.title}
                                                                 </a>
                                                             </h3>
-                                                            {/* <p className="mt-1 text-sm text-gray-500">{product.color}</p> */}
+                                                          
                                                         </div>
                                                         <p className="text-sm font-medium text-gray-900">{product.price}</p>
                                                     </div>
@@ -370,7 +370,7 @@ const ProductList = () => {
                                             <span className="sr-only">Previous</span>
                                             <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
                                         </a>
-                                        {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" */}
+                                       
                                         <a
                                             href="#"
                                             aria-current="page"
@@ -403,7 +403,7 @@ const ProductList = () => {
                         </div>
                     </main>
                 </div>
-            </div>
+            </div> */}
 
 
 
